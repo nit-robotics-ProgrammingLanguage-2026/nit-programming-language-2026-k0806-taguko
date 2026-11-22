@@ -4,17 +4,17 @@ void split_double(double d, int *int_part, double *frac_part);
 
 int main(void)
 {
-    float val;
+    double val;
     int ipart;
     double fpart;
-    scanf("%f", &val);
+    scanf("%lf", &val);
     split_double(val, &ipart, &fpart);
-    printf("%d,%.4f", ipart, fpart);
+    printf("%d,%.4lf", ipart, fpart);
     return 0;
 }
 
 void split_double(double d, int *int_part, double *frac_part)
 {
-    *int_part = d;
-    *frac_part = d;
+    *int_part = (int)d;
+    *frac_part = d - *int_part;
 }
